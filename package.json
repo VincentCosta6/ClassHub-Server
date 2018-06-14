@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/VincentCosta6/ClassHub-Server/issues"
   },
-  "homepage": "https://github.com/VincentCosta6/ClassHub-Server#readme"
+  "homepage": "https://github.com/VincentCosta6/ClassHub-Server#readme",
+  "dependencies": {
+    "client-sessions": "^0.8.0",
+    "express": "^4.16.3"
+  }
 }
