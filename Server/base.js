@@ -9,7 +9,7 @@ let arr = ["login", "signup", "session"];
 
 for(let i in arr)
     router.get("/" + arr[i], function(req, res) {
-        res.sendFile(path.resolve(__dirname, html + arr[i] + ".html"));
+        return res.sendFile(path.resolve(__dirname, html + arr[i] + ".html"));
     });
 
 let fileTypes = ["png", "jpg", "jpeg", "gif", "wav", "mp4"];
