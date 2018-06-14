@@ -25,8 +25,8 @@ router.post("/Image", function(req, res) {
     if(!req.files || !req.files.sample)
         return res.json(m(false, "You didnt upload a file"));
 
-    let extend = req.files.sample.name.split(".")[1];
-    if(!fileValid(extend))
+    let extend = req.files.sample.name.split(".");
+    if(!fileValid(extend[extend.length-1]))
         return res.json(m(false, "File format not supported"));
 
     req.files.sample.mv(path.resolve(__dirname, "public/Images") + "/" + req.files.sample.name, (err) => {
