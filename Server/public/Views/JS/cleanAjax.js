@@ -2,7 +2,7 @@ function cleanAjax(URL, TYPE, DATA, successFunction, dType)
 {
     $.ajax({
         url: URL, //The URL to send to
-        type: type, //GET POST PUT DELETE
+        type: TYPE, //GET POST PUT DELETE
         data: DATA, //JSON data to pass to server
         success: successFunction, //Function that is executed once the request completes
         dataType: dType //The format of data to receive/send ex: 'json'
