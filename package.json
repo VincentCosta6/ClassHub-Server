@@ -1,0 +1,20 @@
+{
+  "name": "classhub-server",
+  "version": "1.0.0",
+  "description": "ClassHub Server Logic",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VincentCosta6/ClassHub-Server.git"
+  },
+  "author": "Vincent Costa",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/VincentCosta6/ClassHub-Server/issues"
+  },
+  "homepage": "https://github.com/VincentCosta6/ClassHub-Server#readme"
+}
