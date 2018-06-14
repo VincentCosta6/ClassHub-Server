@@ -11,4 +11,22 @@ for(let i in arr)
         res.sendFile(path.resolve(__dirname, html + arr[i] + ".html"));
     });
 
+router.post("/Image", function(req, res) {
+    if(!req.session_state.user)
+        return res.json(m(false, "You might not have a session"));
+    if(!req.body.lobbyID)
+        return res.json(m(false, "You dont have a lobbyID"));
+    
+    
+});
+
+router.get("/Image", function(req, res) {
+    
+});
+
+function m(RESULT, REASON)
+{
+    return {passed: RESULT, reason: REASON};
+}
+
 module.exports = router;
