@@ -12,7 +12,7 @@ for(let i in arr)
         res.sendFile(path.resolve(__dirname, html + arr[i] + ".html"));
     });
 
-let fileTypes = ["png", "jpg", "jpeg"];
+let fileTypes = ["png", "jpg", "jpeg", "gif", "wav", "mp4"];
 
 router.use(fileUpload());
 
@@ -24,19 +24,26 @@ router.post("/Image", function(req, res) {
     
     if(!req.files || !req.files.sample)
         return res.json(m(false, "You didnt upload a file"));
+
     let extend = req.files.sample.name.split(".")[1];
     if(!fileValid(extend))
         return res.json(m(false, "File format not supported"));
+
     req.files.sample.mv(path.resolve(__dirname, "public/Images") + "/" + req.files.sample.name, (err) => {
         if(err) {console.log(err);return res.json(m(false, "An error occured"));}
 
-        console.log("Upload");
         return res.json(m(true, "File successfully uploaded"));
     });
 });
 
 router.get("/Image", function(req, res) {
-    
+    //if(!req.session_state.user)
+     //   return res.json(m(false, "You might not have a session"));
+    //if(!req.query.lobbyID)
+        //return res.json(m(false, "You didnt send a lobbyID"));
+    //if session user is NOT in lobby 
+        //return res.json(m(false, "You might not be in this lobby"));
+    return res.sendFile(path.resolve(__dirname, "public/Images/") + req.query.link);
 });
 
 function fileValid(type)
